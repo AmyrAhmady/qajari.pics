@@ -36,6 +36,13 @@ const Album = (props: IProps) => {
       />
 
       <Lightbox
+        carousel={{
+          finite: false,
+          preload: 1,
+          padding: "16px",
+          spacing: "30%",
+          imageFit: "contain",
+        }}
         slides={photos}
         open={index >= 0}
         index={index}
