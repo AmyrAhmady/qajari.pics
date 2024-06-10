@@ -33,7 +33,7 @@ const FolderItem = ({
 }: {
   folder?: IFolder;
   index: number;
-  onClick?: (items: IFolder) => void;
+  onClick?: (folder: IFolder) => void;
 }) => {
   return (
     <a
@@ -46,22 +46,25 @@ const FolderItem = ({
         width: 110,
         height: 120,
         marginBottom: "1.0rem",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
         textDecoration: "none",
         color: "#461573",
       }}
     >
       {folder && (
-        <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <FolderIcon />
           <div
             style={{
               position: "absolute",
-              height: "100%",
-              width: "100%",
+              width: 110,
+              height: 120,
               marginTop: -10,
               display: "flex",
               justifyContent: "center",
@@ -86,7 +89,7 @@ const FolderItem = ({
             <div>🖼️</div>
             {folder.items.length}
           </div>
-        </>
+        </div>
       )}
     </a>
   );
@@ -137,7 +140,9 @@ const FolderList = (props: IProps) => {
         <FolderItem
           folder={folder}
           index={index}
-          onClick={() => onClick(folder)}
+          onClick={(folder_) => {
+            onClick(folder_);
+          }}
         />
       ))}
       {Array(hiddenFolderCount)
