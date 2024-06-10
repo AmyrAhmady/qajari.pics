@@ -1,7 +1,7 @@
 import { IFolder, IPhoto } from "./@types";
 import data from "./data.json";
 
-const IMAGE_HOST_BASE_URL = "http://assets.qajari.pics/";
+const IMAGE_HOST_BASE_URL = "https://assets.qajari.pics/";
 const photoAlbums: IFolder[] = data;
 
 export const getFolderPhotos = (folder: IFolder) => {
