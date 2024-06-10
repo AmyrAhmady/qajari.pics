@@ -12,7 +12,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import { IFolder } from "../utils/@types";
-import { getFolderPhotos } from "../utils/photos";
+import { getFolderPhotos, getFolderThumbnails } from "../utils/photos";
 
 interface IProps {
   folder: IFolder;
@@ -24,10 +24,11 @@ const Album = (props: IProps) => {
   const [index, setIndex] = useState(-1);
 
   const photos = getFolderPhotos(folder);
+  const thumbnails = getFolderThumbnails(folder);
   return (
     <>
       <PhotoAlbum
-        photos={photos}
+        photos={thumbnails}
         layout="rows"
         targetRowHeight={150}
         onClick={({ index }) => setIndex(index)}
