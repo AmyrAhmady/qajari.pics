@@ -8,6 +8,7 @@ import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Download from "yet-another-react-lightbox/plugins/download";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
@@ -40,7 +41,7 @@ const Album = (props: IProps) => {
         index={index}
         close={() => setIndex(-1)}
         // enable optional lightbox plugins
-        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+        plugins={[Thumbnails, Zoom, Download]}
       />
     </>
   );
